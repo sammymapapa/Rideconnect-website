@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TaxiExpress - Connecting Communities, One Ride at a Time</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frideconnec3800back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+<script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-subtle sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c5.514 0 10 4.486 10 10s-4.486 10-10 10S6 21.514 6 16 10.486 6 16 6z"/>
+                            <circle cx="16" cy="16" r="3"/>
+                            <path d="M16 8l2 4h4l-2 2 2 4-4-2-2 4-2-4-4 2 2-4-2-2h4z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">TaxiExpress</h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-primary font-medium px-3 py-2 rounded-md text-sm">Home</a>
+                        <a href="live_map_dashboard.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Live Map</a>
+                        <a href="driver_dashboard.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Driver Hub</a>
+                        <a href="payment_hub.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Payments</a>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="ride_booking_interface.html" class="btn-outline text-sm px-4 py-2">Book Ride</a>
+                    <a href="driver_registration.html" class="btn-primary text-sm px-4 py-2">Become Driver</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-surface border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="homepage.html" class="text-primary block px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="live_map_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Live Map</a>
+                <a href="driver_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Driver Hub</a>
+                <a href="payment_hub.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Payments</a>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <div class="flex flex-col space-y-2 px-3">
+                        <a href="ride_booking_interface.html" class="btn-outline text-center">Book Ride</a>
+                        <a href="driver_registration.html" class="btn-primary text-center">Become Driver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 overflow-hidden">
+        <div class="absolute inset-0 bg-white/50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Hero Content -->
+                <div class="text-center lg:text-left">
+                    <h1 class="text-4xl lg:text-6xl font-bold text-text-primary mb-6">
+                        Connecting Communities,
+                        <span class="text-gradient-primary">One Ride at a Time</span>
+                    </h1>
+                    <p class="text-lg text-text-secondary mb-8 max-w-2xl">
+                        Your journey to flexible earning starts here. Join thousands of drivers earning with their vehicles or book affordable, safe rides with trusted community drivers.
+                    </p>
+                    
+                    <!-- Dual CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-12">
+                        <a href="driver_registration.html" class="btn-primary text-lg px-8 py-4 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                            </svg>
+                            Become a Driver
+                        </a>
+                        <a href="ride_booking_interface.html" class="btn-outline text-lg px-8 py-4 flex items-center justify-center">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                            </svg>
+                            Book a Ride
+                        </a>
+                    </div>
+
+                    <!-- Real-time Stats -->
+                    <div class="grid grid-cols-3 gap-6 text-center">
+                        <div>
+                            <div class="text-2xl font-bold text-primary" id="total-rides">12,847</div>
+                            <div class="text-sm text-text-secondary">Rides Completed</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-secondary" id="active-drivers">1,234</div>
+                            <div class="text-sm text-text-secondary">Active Drivers</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-success" id="cities-served">8</div>
+                            <div class="text-sm text-text-secondary">Cities Served</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animated Map Preview -->
+                <div class="relative">
+                    <div class="bg-surface rounded-2xl shadow-floating p-6 border border-gray-200">
+                        <div class="aspect-square bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl relative overflow-hidden">
+                            <!-- Map Background -->
+                            <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Live Map View" class="w-full h-full object-cover opacity-60" loading="lazy" onerror="this.src='https://images.pexels.com/photos/2422915/pexels-photo-2422915.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'; this.onerror=null;" />
+                            
+                            <!-- Live Driver Indicators -->
+                            <div class="absolute inset-0">
+                                <div class="absolute top-1/4 left-1/3 w-3 h-3 bg-primary rounded-full animate-pulse-subtle"></div>
+                                <div class="absolute top-1/2 right-1/4 w-3 h-3 bg-secondary rounded-full animate-pulse-subtle" style="animation-delay: 0.5s;"></div>
+                                <div class="absolute bottom-1/3 left-1/2 w-3 h-3 bg-success rounded-full animate-pulse-subtle" style="animation-delay: 1s;"></div>
+                                <div class="absolute top-3/4 right-1/3 w-3 h-3 bg-primary rounded-full animate-pulse-subtle" style="animation-delay: 1.5s;"></div>
+                            </div>
+                            
+                            <!-- Live Status Indicator -->
+                            <div class="absolute top-4 right-4 bg-success text-white px-3 py-1 rounded-full text-xs font-medium flex items-center">
+                                <div class="w-2 h-2 bg-white rounded-full mr-2 animate-pulse"></div>
+                                Live
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 text-center">
+                            <p class="text-sm text-text-secondary">Real-time driver locations</p>
+                            <a href="live_map_dashboard.html" class="text-primary text-sm font-medium hover:underline">View Full Map →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators Section -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Trusted by Thousands</h2>
+                <p class="text-text-secondary max-w-2xl mx-auto">Safety isn't just a feature, it's our foundation. We're committed to building trust through transparency and security.</p>
+            </div>
+
+            <!-- Security Badges -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Verified Drivers</h3>
+                    <p class="text-sm text-text-secondary">Background checked</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                            <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Secure Payments</h3>
+                    <p class="text-sm text-text-secondary">M-Pesa & Card</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">Live Tracking</h3>
+                    <p class="text-sm text-text-secondary">Real-time GPS</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="font-semibold text-text-primary">24/7 Support</h3>
+                    <p class="text-sm text-text-secondary">Always available</p>
+                </div>
+            </div>
+
+            <!-- Partnership Logos -->
+            <div class="border-t border-gray-200 pt-12">
+                <p class="text-center text-text-secondary mb-8">Trusted by leading organizations</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-60">
+                    <div class="text-center">
+                        <div class="h-12 bg-gray-200 rounded flex items-center justify-center">
+                            <span class="text-gray-500 font-semibold">M-PESA</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="h-12 bg-gray-200 rounded flex items-center justify-center">
+                            <span class="text-gray-500 font-semibold">NTSA</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="h-12 bg-gray-200 rounded flex items-center justify-center">
+                            <span class="text-gray-500 font-semibold">KCB Bank</span>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <div class="h-12 bg-gray-200 rounded flex items-center justify-center">
+                            <span class="text-gray-500 font-semibold">Safaricom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Carousel -->
+    <section class="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Success Stories</h2>
+                <p class="text-text-secondary">Real experiences from our community of drivers and passengers</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Driver Success Story -->
+                <div class="card card-hover">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Driver Success Story" class="w-16 h-16 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="flex-1">
+                            <div class="flex items-center mb-2">
+                                <h4 class="font-semibold text-text-primary">James Mwangi</h4>
+                                <span class="ml-2 bg-secondary text-white text-xs px-2 py-1 rounded-full">Driver</span>
+                            </div>
+                            <p class="text-text-secondary mb-3">"I've earned KES 45,000 this month driving part-time. RideConnect gave me the flexibility to support my family while pursuing my studies."</p>
+                            <div class="flex items-center text-sm text-success">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"/>
+                                </svg>
+                                Monthly Earnings: KES 45,000
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passenger Success Story -->
+                <div class="card card-hover">
+                    <div class="flex items-start space-x-4">
+                        <img src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Passenger Success Story" class="w-16 h-16 rounded-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="flex-1">
+                            <div class="flex items-center mb-2">
+                                <h4 class="font-semibold text-text-primary">Sarah Wanjiku</h4>
+                                <span class="ml-2 bg-primary text-white text-xs px-2 py-1 rounded-full">Passenger</span>
+                            </div>
+                            <p class="text-text-secondary mb-3">"Safe, affordable, and reliable. I save 40% on transport costs compared to traditional taxis. The drivers are friendly and professional."</p>
+                            <div class="flex items-center text-sm text-primary">
+                                <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z"/>
+                                </svg>
+                                40% Cost Savings
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">How RideConnect Works</h2>
+                <p class="text-text-secondary">Simple steps to start earning or riding</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- For Drivers -->
+                <div>
+                    <h3 class="text-xl font-semibold text-text-primary mb-6 text-center">For Drivers</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-semibold text-sm">1</div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Register & Verify</h4>
+                                <p class="text-text-secondary text-sm">Sign up with your vehicle details and complete verification</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-semibold text-sm">2</div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Go Online</h4>
+                                <p class="text-text-secondary text-sm">Turn on your availability and start receiving ride requests</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center text-white font-semibold text-sm">3</div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Earn Money</h4>
+                                <p class="text-text-secondary text-sm">Complete rides and receive payments instantly via M-Pesa</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <a href="driver_registration.html" class="btn-secondary">Start Driving Today</a>
+                    </div>
+                </div>
+
+                <!-- For Passengers -->
+                <div>
+                    <h3 class="text-xl font-semibold text-text-primary mb-6 text-center">For Passengers</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-semibold text-sm">1</div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Book a Ride</h4>
+                                <p class="text-text-secondary text-sm">Enter your destination and choose from available drivers</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-semibold text-sm">2</div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Track & Ride</h4>
+                                <p class="text-text-secondary text-sm">Watch your driver approach in real-time and enjoy the ride</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white font-semibold text-sm">3</div>
+                            <div>
+                                <h4 class="font-semibold text-text-primary">Pay & Rate</h4>
+                                <p class="text-text-secondary text-sm">Pay securely and rate your experience</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 text-center">
+                        <a href="ride_booking_interface.html" class="btn-primary">Book Your First Ride</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c5.514 0 10 4.486 10 10s-4.486 10-10 10S6 21.514 6 16 10.486 6 16 6z"/>
+                            <circle cx="16" cy="16" r="3"/>
+                            <path d="M16 8l2 4h4l-2 2 2 4-4-2-2 4-2-4-4 2 2-4-2-2h4z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">RideConnect</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">Connecting communities through safe, affordable, and reliable ride-sharing.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-gray-300 hover:text-primary transition-smooth">Home</a></li>
+                        <li><a href="live_map_dashboard.html" class="text-gray-300 hover:text-primary transition-smooth">Live Map</a></li>
+                        <li><a href="driver_dashboard.html" class="text-gray-300 hover:text-primary transition-smooth">Driver Hub</a></li>
+                        <li><a href="payment_hub.html" class="text-gray-300 hover:text-primary transition-smooth">Payments</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="driver_registration.html" class="text-gray-300 hover:text-primary transition-smooth">Become a Driver</a></li>
+                        <li><a href="ride_booking_interface.html" class="text-gray-300 hover:text-primary transition-smooth">Book a Ride</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">Safety Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            +254 700 123 456
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            support@rideconnect.co.ke
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                            </svg>
+                            Nairobi, Kenya
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
+                <p>© 2025 RideConnect. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Animate counters
+        function animateCounter(element, target) {
+            let current = 0;
+            const increment = target / 100;
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(timer);
+                }
+                element.textContent = Math.floor(current).toLocaleString();
+            }, 20);
+        }
+
+        // Initialize counters on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            animateCounter(document.getElementById('total-rides'), 12847);
+            animateCounter(document.getElementById('active-drivers'), 1234);
+            animateCounter(document.getElementById('cities-served'), 8);
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

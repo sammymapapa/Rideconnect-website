@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Become a Driver - RideConnect</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Frideconnec3800back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.8"></script>
+<script type="module" src="https://static.rocket.new/rocket-shot.js?v=0.0.1"></script>
+</head>
+<body class="bg-background text-text-primary">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-subtle sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c5.514 0 10 4.486 10 10s-4.486 10-10 10S6 21.514 6 16 10.486 6 16 6z"/>
+                            <circle cx="16" cy="16" r="3"/>
+                            <path d="M16 8l2 4h4l-2 2 2 4-4-2-2 4-2-4-4 2 2-4-2-2h4z"/>
+                        </svg>
+                    </div>
+                    <div class="ml-3">
+                        <h1 class="text-xl font-bold text-primary">RideConnect</h1>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="homepage.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Home</a>
+                        <a href="live_map_dashboard.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Live Map</a>
+                        <a href="driver_dashboard.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Driver Hub</a>
+                        <a href="payment_hub.html" class="text-text-secondary hover:text-primary px-3 py-2 rounded-md text-sm transition-smooth">Payments</a>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div class="hidden md:flex items-center space-x-3">
+                    <a href="ride_booking_interface.html" class="btn-outline text-sm px-4 py-2">Book Ride</a>
+                    <a href="driver_registration.html" class="btn-primary text-sm px-4 py-2">Become Driver</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" class="text-text-secondary hover:text-primary p-2" onclick="toggleMobileMenu()">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-surface border-t border-gray-200">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="homepage.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Home</a>
+                <a href="live_map_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Live Map</a>
+                <a href="driver_dashboard.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Driver Hub</a>
+                <a href="payment_hub.html" class="text-text-secondary hover:text-primary block px-3 py-2 rounded-md text-base">Payments</a>
+                <div class="pt-4 pb-3 border-t border-gray-200">
+                    <div class="flex flex-col space-y-2 px-3">
+                        <a href="ride_booking_interface.html" class="btn-outline text-center">Book Ride</a>
+                        <a href="driver_registration.html" class="btn-primary text-center">Become Driver</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 to-secondary-50 overflow-hidden">
+        <div class="absolute inset-0 bg-white/50"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-5xl font-bold text-text-primary mb-6">
+                    Turn Your Car Into
+                    <span class="text-gradient-primary">Your Business</span>
+                </h1>
+                <p class="text-lg text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Join thousands of drivers earning flexible income with RideConnect. Set your own schedule, keep more of what you earn, and become part of Kenya's fastest-growing ride-sharing community.
+                </p>
+                
+                <!-- Earnings Highlight -->
+                <div class="bg-success-50 border border-success-200 rounded-xl p-6 max-w-2xl mx-auto mb-8">
+                    <div class="flex items-center justify-center mb-4">
+                        <svg class="w-8 h-8 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8.433 7.418c.155-.103.346-.196.567-.267v1.698a2.305 2.305 0 01-.567-.267C8.07 8.34 8 8.114 8 8c0-.114.07-.34.433-.582zM11 12.849v-1.698c.22.071.412.164.567.267.364.243.433.468.433.582 0 .114-.07.34-.433.582a2.305 2.305 0 01-.567.267z"/>
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-13a1 1 0 10-2 0v.092a4.535 4.535 0 00-1.676.662C6.602 6.234 6 7.009 6 8c0 .99.602 1.765 1.324 2.246.48.32 1.054.545 1.676.662v1.941c-.391-.127-.68-.317-.843-.504a1 1 0 10-1.51 1.31c.562.649 1.413 1.076 2.353 1.253V15a1 1 0 102 0v-.092a4.535 4.535 0 001.676-.662C13.398 13.766 14 12.991 14 12c0-.99-.602-1.765-1.324-2.246A4.535 4.535 0 0011 9.092V7.151c.391.127.68.317.843.504a1 1 0 101.511-1.31c-.563-.649-1.413-1.076-2.354-1.253V5z"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-success">Average Monthly Earnings</h3>
+                    </div>
+                    <div class="text-3xl font-bold text-success mb-2">KES 45,000 - 85,000</div>
+                    <p class="text-success-600 text-sm">Based on 20-30 hours per week driving in Nairobi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Progress Indicator -->
+    <section class="bg-surface border-b border-gray-200">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center text-white text-sm font-semibold">1</div>
+                        <span class="ml-2 text-sm font-medium text-primary">Personal Info</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-sm font-semibold">2</div>
+                        <span class="ml-2 text-sm text-gray-500">Vehicle Details</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-sm font-semibold">3</div>
+                        <span class="ml-2 text-sm text-gray-500">Documents</span>
+                    </div>
+                    <div class="w-12 h-0.5 bg-gray-200"></div>
+                    <div class="flex items-center">
+                        <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 text-sm font-semibold">4</div>
+                        <span class="ml-2 text-sm text-gray-500">Verification</span>
+                    </div>
+                </div>
+                <div class="text-sm text-text-secondary">Step 1 of 4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Main Form -->
+                <div class="lg:col-span-2">
+                    <div class="card">
+                        <h2 class="text-2xl font-bold text-text-primary mb-6">Personal Information</h2>
+                        
+                        <form id="driver-registration-form" class="space-y-6">
+                            <!-- Profile Photo Upload -->
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">Profile Photo</label>
+                                <div class="flex items-center space-x-6">
+                                    <div class="w-20 h-20 bg-gray-100 rounded-full flex items-center justify-center overflow-hidden">
+                                        <img id="profile-preview" src alt="Profile Preview" class="w-full h-full object-cover hidden" />
+                                        <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <input type="file" id="profile-photo" accept="image/*" class="hidden" onchange="previewImage(this, 'profile-preview')" />
+                                        <label for="profile-photo" class="btn-outline cursor-pointer text-sm">
+                                            Upload Photo
+                                        </label>
+                                        <p class="text-xs text-text-secondary mt-1">JPG, PNG up to 5MB</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Name Fields -->
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="first-name" class="block text-sm font-medium text-text-primary mb-2">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required class="input-field" placeholder="Enter your first name" />
+                                </div>
+                                <div>
+                                    <label for="last-name" class="block text-sm font-medium text-text-primary mb-2">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required class="input-field" placeholder="Enter your last name" />
+                                </div>
+                            </div>
+
+                            <!-- Contact Information -->
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-text-primary mb-2">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required class="input-field" placeholder="+254 700 123 456" />
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-text-primary mb-2">Email Address *</label>
+                                    <input type="email" id="email" name="email" required class="input-field" placeholder="your.email@example.com" />
+                                </div>
+                            </div>
+                            <!-- Add this after the Email field -->
+
+<!-- Account Security -->
+<div class="grid md:grid-cols-2 gap-4">
+    <div>
+        <label for="password" class="block text-sm font-medium text-text-primary mb-2">Password *</label>
+        <input type="password" id="password" name="password" required class="input-field" placeholder="Create a strong password" minlength="6" />
+    </div>
+    <div>
+        <label for="confirm-password" class="block text-sm font-medium text-text-primary mb-2">Confirm Password *</label>
+        <input type="password" id="confirm-password" name="confirmPassword" required class="input-field" placeholder="Confirm your password" />
+    </div>
+</div>
+
+                            <!-- ID Number -->
+                            <div>
+                                <label for="id-number" class="block text-sm font-medium text-text-primary mb-2">National ID Number *</label>
+                                <input type="text" id="id-number" name="id-number" required class="input-field" placeholder="Enter your ID number" />
+                            </div>
+
+                            <!-- Address -->
+                            <div>
+                                <label for="address" class="block text-sm font-medium text-text-primary mb-2">Home Address *</label>
+                                <textarea id="address" name="address" required class="input-field" rows="3" placeholder="Enter your full address"></textarea>
+                            </div>
+
+                            <!-- City and County -->
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="city" class="block text-sm font-medium text-text-primary mb-2">City *</label>
+                                    <select id="city" name="city" required class="input-field">
+                                        <option value>Select your city</option>
+                                        <option value="nairobi">Nairobi</option>
+                                        <option value="mombasa">Mombasa</option>
+                                        <option value="kisumu">Kisumu</option>
+                                        <option value="nakuru">Nakuru</option>
+                                        <option value="eldoret">Eldoret</option>
+                                        <option value="thika">Thika</option>
+                                        <option value="malindi">Malindi</option>
+                                        <option value="kitale">Kitale</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="county" class="block text-sm font-medium text-text-primary mb-2">County *</label>
+                                    <select id="county" name="county" required class="input-field">
+                                        <option value>Select your county</option>
+                                        <option value="nairobi">Nairobi</option>
+                                        <option value="mombasa">Mombasa</option>
+                                        <option value="kisumu">Kisumu</option>
+                                        <option value="nakuru">Nakuru</option>
+                                        <option value="uasin-gishu">Uasin Gishu</option>
+                                        <option value="kiambu">Kiambu</option>
+                                        <option value="kilifi">Kilifi</option>
+                                        <option value="trans-nzoia">Trans Nzoia</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Emergency Contact -->
+                            <div class="border-t border-gray-200 pt-6">
+                                <h3 class="text-lg font-semibold text-text-primary mb-4">Emergency Contact</h3>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div>
+                                        <label for="emergency-name" class="block text-sm font-medium text-text-primary mb-2">Contact Name *</label>
+                                        <input type="text" id="emergency-name" name="emergency-name" required class="input-field" placeholder="Emergency contact name" />
+                                    </div>
+                                    <div>
+                                        <label for="emergency-phone" class="block text-sm font-medium text-text-primary mb-2">Contact Phone *</label>
+                                        <input type="tel" id="emergency-phone" name="emergency-phone" required class="input-field" placeholder="+254 700 123 456" />
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <label for="emergency-relationship" class="block text-sm font-medium text-text-primary mb-2">Relationship *</label>
+                                    <select id="emergency-relationship" name="emergency-relationship" required class="input-field">
+                                        <option value>Select relationship</option>
+                                        <option value="spouse">Spouse</option>
+                                        <option value="parent">Parent</option>
+                                        <option value="sibling">Sibling</option>
+                                        <option value="child">Child</option>
+                                        <option value="friend">Friend</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <!-- Add this after the Emergency Contact section -->
+
+<!-- Vehicle Details -->
+<div class="border-t border-gray-200 pt-6">
+    <h3 class="text-lg font-semibold text-text-primary mb-4">Vehicle Information</h3>
+    
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label for="vehicle-type" class="block text-sm font-medium text-text-primary mb-2">Vehicle Type *</label>
+            <select id="vehicle-type" name="vehicleType" required class="input-field">
+                <option value="">Select vehicle type</option>
+                <option value="saloon">Saloon Car</option>
+                <option value="hatchback">Hatchback</option>
+                <option value="suv">SUV</option>
+                <option value="mpv">MPV/Minivan</option>
+                <option value="premium">Premium Vehicle</option>
+            </select>
+        </div>
+        <div>
+            <label for="vehicle-make" class="block text-sm font-medium text-text-primary mb-2">Vehicle Make *</label>
+            <input type="text" id="vehicle-make" name="vehicleMake" required class="input-field" placeholder="e.g., Toyota, Honda" />
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div>
+            <label for="vehicle-model" class="block text-sm font-medium text-text-primary mb-2">Vehicle Model *</label>
+            <input type="text" id="vehicle-model" name="vehicleModel" required class="input-field" placeholder="e.g., Premio, Fit" />
+        </div>
+        <div>
+            <label for="vehicle-year" class="block text-sm font-medium text-text-primary mb-2">Year of Manufacture *</label>
+            <input type="number" id="vehicle-year" name="vehicleYear" min="2000" max="2024" required class="input-field" placeholder="e.g., 2020" />
+        </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-4 mt-4">
+        <div>
+            <label for="vehicle-color" class="block text-sm font-medium text-text-primary mb-2">Vehicle Color *</label>
+            <input type="text" id="vehicle-color" name="vehicleColor" required class="input-field" placeholder="e.g., White, Black" />
+        </div>
+        <div>
+            <label for="license-plate" class="block text-sm font-medium text-text-primary mb-2">License Plate *</label>
+            <input type="text" id="license-plate" name="licensePlate" required class="input-field" placeholder="e.g., KAA 123A" />
+        </div>
+    </div>
+</div>
+<!-- Add this after Vehicle Details -->
+
+<!-- Document Upload -->
+<div class="border-t border-gray-200 pt-6">
+    <h3 class="text-lg font-semibold text-text-primary mb-4">Required Documents</h3>
+    
+    <!-- Driving License -->
+    <div class="mb-6">
+        <label class="block text-sm font-medium text-text-primary mb-2">Driving License *</label>
+        <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center">
+            <input type="file" id="driving-license" accept="image/*,.pdf" class="hidden" />
+            <label for="driving-license" class="cursor-pointer">
+                <svg class="w-12 h-12 text-gray-400 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <p class="text-text-secondary mb-2">Upload your valid driving license</p>
+                <p class="text-xs text-text-secondary">JPG, PNG, or PDF up to 5MB</p>
+            </label>
+        </div>
+    </div>
+
+    <!-- ID Document -->
+    <div class="mb-6">
+        <label class="block text-sm font-medium text-text-primary mb-2">National ID (Front & Back) *</label>
+        <div class="grid md:grid-cols-2 gap-4">
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                <input type="file" id="id-front" accept="image/*" class="hidden" />
+                <label for="id-front" class="cursor-pointer">
+                    <span class="btn-outline text-sm">Upload Front</span>
+                </label>
+            </div>
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                <input type="file" id="id-back" accept="image/*" class="hidden" />
+                <label for="id-back" class="cursor-pointer">
+                    <span class="btn-outline text-sm">Upload Back</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <!-- Insurance & Inspection -->
+    <div class="grid md:grid-cols-2 gap-4">
+        <div>
+            <label class="block text-sm font-medium text-text-primary mb-2">Insurance Certificate *</label>
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                <input type="file" id="insurance" accept="image/*,.pdf" class="hidden" />
+                <label for="insurance" class="cursor-pointer">
+                    <span class="btn-outline text-sm">Upload Insurance</span>
+                </label>
+            </div>
+        </div>
+        <div>
+            <label class="block text-sm font-medium text-text-primary mb-2">Inspection Certificate *</label>
+            <div class="border-2 border-dashed border-gray-300 rounded-lg p-4 text-center">
+                <input type="file" id="inspection" accept="image/*,.pdf" class="hidden" />
+                <label for="inspection" class="cursor-pointer">
+                    <span class="btn-outline text-sm">Upload Inspection</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+
+                            <!-- Terms and Conditions -->
+                            <div class="border-t border-gray-200 pt-6">
+                                <div class="flex items-start">
+                                    <input type="checkbox" id="terms" name="terms" required class="mt-1 mr-3" />
+                                    <label for="terms" class="text-sm text-text-secondary">
+                                        I agree to the <a href="javascript:void(0)" class="text-primary hover:underline">Terms of Service</a> and <a href="javascript:void(0)" class="text-primary hover:underline">Privacy Policy</a>. I understand that RideConnect will verify my information and documents before approval.
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="flex justify-end pt-6">
+                                <button type="submit" class="btn-primary px-8">
+                                    Continue to Verification
+                                    <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- Earnings Calculator -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Earnings Calculator</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-text-secondary mb-2">Hours per week</label>
+                                <input type="range" id="hours-slider" min="10" max="60" value="25" class="w-full" onchange="calculateEarnings()" />
+                                <div class="flex justify-between text-xs text-text-secondary">
+                                    <span>10h</span>
+                                    <span id="hours-display">25h</span>
+                                    <span>60h</span>
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-text-secondary mb-2">City</label>
+                                <select id="earnings-city" class="input-field text-sm" onchange="calculateEarnings()">
+                                    <option value="nairobi">Nairobi</option>
+                                    <option value="mombasa">Mombasa</option>
+                                    <option value="kisumu">Kisumu</option>
+                                    <option value="nakuru">Nakuru</option>
+                                </select>
+                            </div>
+                            <div class="bg-success-50 rounded-lg p-4 text-center">
+                                <div class="text-2xl font-bold text-success" id="estimated-earnings">KES 45,000</div>
+                                <div class="text-sm text-success-600">Estimated monthly earnings</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Requirements Checklist -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Requirements</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Valid driving license</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Vehicle registration</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Valid insurance</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Clean criminal record</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-success mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-sm text-text-secondary">Age 21+ years</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Support Contact -->
+                    <div class="card">
+                        <h3 class="text-lg font-semibold text-text-primary mb-4">Need Help?</h3>
+                        <p class="text-sm text-text-secondary mb-4">Our driver support team is here to help you through the registration process.</p>
+                        <div class="space-y-2">
+                            <a href="tel:+254700123456" class="flex items-center text-sm text-primary hover:underline">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                                </svg>
+                                +254 700 123 456
+                            </a>
+                            <a href="mailto:drivers@rideconnect.co.ke" class="flex items-center text-sm text-primary hover:underline">
+                                <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                                </svg>
+                                drivers@rideconnect.co.ke
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Driver Success Stories</h2>
+                <p class="text-text-secondary">Real stories from drivers who transformed their lives with RideConnect</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Success Story 1 -->
+                <div class="card card-hover">
+                    <div class="text-center mb-4">
+                        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="James Mwangi - Successful Driver" class="w-20 h-20 rounded-full object-cover mx-auto mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <h4 class="font-semibold text-text-primary">James Mwangi</h4>
+                        <p class="text-sm text-text-secondary">Nairobi • Driving for 2 years</p>
+                    </div>
+                    <blockquote class="text-sm text-text-secondary mb-4">
+                        "RideConnect changed my life. I started driving part-time while studying and now earn enough to support my family and pay for my education. The flexibility is incredible."
+                    </blockquote>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-success font-semibold">KES 65,000/month</span>
+                        <span class="text-text-secondary">4.9 ⭐ rating</span>
+                    </div>
+                </div>
+
+                <!-- Success Story 2 -->
+                <div class="card card-hover">
+                    <div class="text-center mb-4">
+                        <img src="https://images.pexels.com/photos/1040880/pexels-photo-1040880.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Grace Wanjiku - Successful Driver" class="w-20 h-20 rounded-full object-cover mx-auto mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <h4 class="font-semibold text-text-primary">Grace Wanjiku</h4>
+                        <p class="text-sm text-text-secondary">Mombasa • Driving for 1 year</p>
+                    </div>
+                    <blockquote class="text-sm text-text-secondary mb-4">
+                        "As a single mother, RideConnect gave me the opportunity to earn good money while being available for my children. The community support is amazing."
+                    </blockquote>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-success font-semibold">KES 48,000/month</span>
+                        <span class="text-text-secondary">4.8 ⭐ rating</span>
+                    </div>
+                </div>
+
+                <!-- Success Story 3 -->
+                <div class="card card-hover">
+                    <div class="text-center mb-4">
+                        <img src="https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Peter Kimani - Successful Driver" class="w-20 h-20 rounded-full object-cover mx-auto mb-4" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <h4 class="font-semibold text-text-primary">Peter Kimani</h4>
+                        <p class="text-sm text-text-secondary">Kisumu • Driving for 3 years</p>
+                    </div>
+                    <blockquote class="text-sm text-text-secondary mb-4">
+                        "I retired early and started driving with RideConnect. It keeps me active, I meet interesting people, and the extra income is very helpful for my family."
+                    </blockquote>
+                    <div class="flex items-center justify-between text-sm">
+                        <span class="text-success font-semibold">KES 52,000/month</span>
+                        <span class="text-text-secondary">5.0 ⭐ rating</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Welcome Video -->
+            <div class="mt-12 text-center">
+                <div class="bg-surface rounded-xl shadow-floating p-8 max-w-2xl mx-auto">
+                    <h3 class="text-xl font-semibold text-text-primary mb-4">Welcome Message from Our Community</h3>
+                    <div class="aspect-video bg-gray-100 rounded-lg flex items-center justify-center mb-4 relative overflow-hidden">
+                        <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Welcome Video Thumbnail" class="w-full h-full object-cover" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1556761175-4b46a572b786?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+                            <button class="w-16 h-16 bg-primary rounded-full flex items-center justify-center text-white hover:bg-primary-700 transition-smooth" onclick="playWelcomeVideo()">
+                                <svg class="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M8 5v10l8-5-8-5z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-text-secondary text-sm">Hear from successful drivers about their journey with RideConnect and get tips for maximizing your earnings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-text-primary mb-4">Trusted & Verified Platform</h2>
+                <p class="text-text-secondary">RideConnect is officially registered and approved by Kenyan authorities</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <!-- NTSA Approval -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-text-primary text-sm">NTSA Approved</h4>
+                    <p class="text-xs text-text-secondary">Transport Authority</p>
+                </div>
+
+                <!-- Business Registration -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
+                            <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-text-primary text-sm">Licensed Business</h4>
+                    <p class="text-xs text-text-secondary">Registered in Kenya</p>
+                </div>
+
+                <!-- Insurance Partner -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-success" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-text-primary text-sm">Insured Platform</h4>
+                    <p class="text-xs text-text-secondary">Full Coverage</p>
+                </div>
+
+                <!-- Security Certified -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-warning-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <svg class="w-8 h-8 text-warning" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"/>
+                        </svg>
+                    </div>
+                    <h4 class="font-semibold text-text-primary text-sm">Data Secure</h4>
+                    <p class="text-xs text-text-secondary">SSL Encrypted</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-text-primary text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div>
+                    <div class="flex items-center mb-4">
+                        <svg class="h-8 w-8 text-primary" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm0 4c5.514 0 10 4.486 10 10s-4.486 10-10 10S6 21.514 6 16 10.486 6 16 6z"/>
+                            <circle cx="16" cy="16" r="3"/>
+                            <path d="M16 8l2 4h4l-2 2 2 4-4-2-2 4-2-4-4 2 2-4-2-2h4z"/>
+                        </svg>
+                        <span class="ml-2 text-xl font-bold">RideConnect</span>
+                    </div>
+                    <p class="text-gray-300 text-sm mb-4">Connecting communities through safe, affordable, and reliable ride-sharing.</p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 5.079 3.158 9.417 7.618 11.174-.105-.949-.199-2.403.041-3.439.219-.937 1.406-5.957 1.406-5.957s-.359-.72-.359-1.781c0-1.663.967-2.911 2.168-2.911 1.024 0 1.518.769 1.518 1.688 0 1.029-.653 2.567-.992 3.992-.285 1.193.6 2.165 1.775 2.165 2.128 0 3.768-2.245 3.768-5.487 0-2.861-2.063-4.869-5.008-4.869-3.41 0-5.409 2.562-5.409 5.199 0 1.033.394 2.143.889 2.741.099.12.112.225.085.345-.09.375-.293 1.199-.334 1.363-.053.225-.172.271-.402.165-1.495-.69-2.433-2.878-2.433-4.646 0-3.776 2.748-7.252 7.92-7.252 4.158 0 7.392 2.967 7.392 6.923 0 4.135-2.607 7.462-6.233 7.462-1.214 0-2.357-.629-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146C9.57 23.812 10.763 24.009 12.017 24.009c6.624 0 11.99-5.367 11.99-11.988C24.007 5.367 18.641.001.012.001z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="homepage.html" class="text-gray-300 hover:text-primary transition-smooth">Home</a></li>
+                        <li><a href="live_map_dashboard.html" class="text-gray-300 hover:text-primary transition-smooth">Live Map</a></li>
+                        <li><a href="driver_dashboard.html" class="text-gray-300 hover:text-primary transition-smooth">Driver Hub</a></li>
+                        <li><a href="payment_hub.html" class="text-gray-300 hover:text-primary transition-smooth">Payments</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="driver_registration.html" class="text-gray-300 hover:text-primary transition-smooth">Become a Driver</a></li>
+                        <li><a href="ride_booking_interface.html" class="text-gray-300 hover:text-primary transition-smooth">Book a Ride</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">Safety Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-primary transition-smooth">Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-300">
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/>
+                            </svg>
+                            +254 700 123 456
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            support@rideconnect.co.ke
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-4 h-4 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/>
+                            </svg>
+                            Nairobi, Kenya
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-sm text-gray-300">
+                <p>© 2025 RideConnect. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+          document.getElementById('driver-registration-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Password validation
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match!');
+            return;
+        }
+        
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long!');
+            return;
+        }
+
+        // Collect form data
+        const formData = {
+            firstName: document.getElementById('first-name').value,
+            lastName: document.getElementById('last-name').value,
+            email: document.getElementById('email').value,
+            password: password,
+            phone: document.getElementById('phone').value,
+            idNumber: document.getElementById('id-number').value,
+            address: document.getElementById('address').value,
+            city: document.getElementById('city').value,
+            county: document.getElementById('county').value,
+            emergencyContact: JSON.stringify({
+                name: document.getElementById('emergency-name').value,
+                phone: document.getElementById('emergency-phone').value,
+                relationship: document.getElementById('emergency-relationship').value
+            }),
+            // Vehicle details
+            vehicleType: document.getElementById('vehicle-type').value,
+            vehicleMake: document.getElementById('vehicle-make').value,
+            vehicleModel: document.getElementById('vehicle-model').value,
+            vehicleYear: document.getElementById('vehicle-year').value,
+            vehicleColor: document.getElementById('vehicle-color').value,
+            licensePlate: document.getElementById('license-plate').value
+        };
+
+        try {
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = 'Submitting... <svg class="w-4 h-4 ml-2 animate-spin" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 2v4m0 12v4m8-10h-4M6 12H2m15.364-7.364l-2.828 2.828M6.343 17.657l-2.828 2.828m14.142 0l-2.828-2.828M6.343 6.343L3.515 3.515"/></svg>';
+
+            // Send to backend
+            const response = await fetch('/api/auth/register/driver', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const result = await response.json();
+
+            if (response.ok) {
+                alert('Registration successful! You will be verified within 24 hours.');
+                // Store token for future requests
+                localStorage.setItem('token', result.token);
+                localStorage.setItem('user', JSON.stringify(result.user));
+                // Redirect to driver dashboard or next step
+                window.location.href = 'driver_dashboard.html';
+            } else {
+                alert('Registration failed: ' + result.message);
+            }
+        } catch (error) {
+            console.error('Registration error:', error);
+            alert('Network error. Please try again.');
+        } finally {
+            // Reset button state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Continue to Vehicle Details <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>';
+        }
+    });
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function previewImage(input, previewId) {
+            const preview = document.getElementById(previewId);
+            if (input.files && input.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.classList.remove('hidden');
+                    preview.parentElement.querySelector('svg').classList.add('hidden');
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        function calculateEarnings() {
+            const hours = document.getElementById('hours-slider').value;
+            const city = document.getElementById('earnings-city').value;
+            
+            document.getElementById('hours-display').textContent = hours + 'h';
+            
+            // Base rates per city (KES per hour)
+            const cityRates = {
+                'nairobi': 1800,
+                'mombasa': 1500,
+                'kisumu': 1200,
+                'nakuru': 1100
+            };
+            
+            const hourlyRate = cityRates[city] || cityRates['nairobi'];
+            const weeklyEarnings = hours * hourlyRate;
+            const monthlyEarnings = weeklyEarnings * 4.33; // Average weeks per month
+            
+            document.getElementById('estimated-earnings').textContent = 
+                'KES ' + Math.round(monthlyEarnings).toLocaleString();
+        }
+
+        function playWelcomeVideo() {
+            alert('Welcome video would play here. This is a demo version.');
+        }
+
+        // Form submission handler
+        document.getElementById('driver-registration-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                    field.classList.add('border-error');
+                } else {
+                    field.classList.remove('border-error');
+                }
+            });
+            
+            if (isValid) {
+                // Simulate form submission
+                alert('Registration form submitted successfully! You will be redirected to vehicle details.');
+                // In a real application, this would redirect to the next step
+                // window.location.href = 'driver_registration_step2.html';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        // Initialize earnings calculator
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateEarnings();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
