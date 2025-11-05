@@ -78,8 +78,8 @@ Installation
 Clone the repository
 
 bash
-git clone https://github.com/your-username/rideconnect.git
-cd rideconnect
+git clone https://github.com/sammymapapa/rideconnect-website.git
+cd taxi-booking-app
 Install dependencies
 
 bash
@@ -100,7 +100,7 @@ text
 Open http://localhost:3000 in your browser
 📁 Project Structure
 text
-rideconnect/
+taxi-booking-app/
 ├── public/                 # Frontend assets
 │   ├── css/               # Stylesheets
 │   ├── js/                # Client-side JavaScript
